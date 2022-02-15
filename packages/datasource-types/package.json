@@ -1,0 +1,23 @@
+{
+  "name": "@alilc/lowcode-datasource-types",
+  "version": "1.0.0-beta.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "clean": "rm -rf es lib",
+    "build": "npm run clean && tsc && tsc --outDir ./lib --module commonjs ",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "gitHead": "714230d68a17fc010fbe80b511802bb410188fb5"
+}

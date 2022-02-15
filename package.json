@@ -1,0 +1,61 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "scripts": {
+    "build": "./scripts/build.sh",
+    "clean": "rm -rf ./packages/*/lib ./packages/*/es ./packages/*/dist ./packages/*/build",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx ./ --quiet",
+    "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx ./ --quiet --fix",
+    "pub": "tnpm run build && lerna publish patch --force-publish --exact --no-changelog",
+    "pub:prepatch": "tnpm run build && lerna publish prepatch --force-publish --exact --dist-tag beta --preid beta --no-changelog",
+    "pub:prerelease": "tnpm run build && lerna publish prerelease --force-publish --exact --dist-tag beta --preid beta --no-changelog",
+    "setup": "./scripts/setup.sh",
+    "start": "./scripts/start.sh",
+    "test": "lerna run test --stream",
+    "test:snapshot": "lerna run test:snapshot",
+    "xima:fix": "xima fix",
+    "xima:scan": "xima scan",
+    "release:beta": "lerna publish --canary --pre-dist-tag=beta --preid=beta --yes",
+    "release:rc": "lerna publish prerelease --pre-dist-tag=rc --preid=rc",
+    "release:next": "lerna publish prerelease --pre-dist-tag=next --preid=next",
+    "release:preminor": "lerna publish preminor --pre-dist-tag=next --preid=next",
+    "release:premajor": "lerna publish premajor --pre-dist-tag=next --preid=next",
+    "release": "lerna publish",
+    "release:minor": "lerna publish minor",
+    "release:major": "lerna publish major"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "xima exec lint-staged",
+      "commit-msg": "xima exec commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.{css,scss,less}": "xima exec stylelint",
+    "**/*.{js,jsx,ts,tsx}": "xima exec eslint"
+  },
+  "devDependencies": {
+    "ava": "^1.0.1",
+    "lerna": "^4.x",
+    "ts-node": "^7.0.1",
+    "tslib": "^1.9.3",
+    "typescript": "^3.2.2",
+    "xima": "^0.2.15"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "tnpm": {
+    "mode": "yarn",
+    "lockfile": "enable"
+  },
+  "name": "ali-lowcode-datasource",
+  "publishConfig": {
+    "registry": "https://registry.antfin-inc.com"
+  }
+}

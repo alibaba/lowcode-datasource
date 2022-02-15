@@ -1,0 +1,12 @@
+{
+  "name": "ali-lowcode-datasource-pane",
+  "assets": {
+    "type": "command",
+    "command": {
+      "cmd": [
+        "tnpm install",
+        "tnpm run cloud-build"
+      ]
+    }
+  }
+}
