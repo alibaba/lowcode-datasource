@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.0.0 (2022-02-15)
+
+
+### Features
+
+* 🎸 提交开源版本 ([453516f](https://github.com/alibaba/lowcode-datasource/commit/453516ffcb25868a6d6f380ec8967a36bb474089))
+
+
+
+
+
 # [1.0.0](https://github.com/alibaba/lowcode-datasource/compare/v1.0.0-beta.0...v1.0.0) (2022-02-15)
 
 
