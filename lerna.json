@@ -1,0 +1,25 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    },
+    "publish": {
+      "npmClient": "npm",
+      "verifyRegistry": true,
+      "verifyAccess": false,
+      "ignoreChanges": [
+        "**/*.md",
+        "**/test/**"
+      ],
+      "conventionalCommits": true
+    }
+  }
+}

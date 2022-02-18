@@ -1,0 +1,31 @@
+{
+  "name": "@alilc/lowcode-datasource-jsonp-handler",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "clean": "rm -rf es lib",
+    "build": "npm run clean && tsc && tsc --outDir ./lib --module commonjs ",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@alilc/lowcode-datasource-types": "^1.0.0",
+    "jsonp": "^0.2.1",
+    "typescript": "^3.9.7"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@types/jsonp": "^0.2.0"
+  },
+  "gitHead": "714230d68a17fc010fbe80b511802bb410188fb5"
+}
