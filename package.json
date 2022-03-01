@@ -29,6 +29,7 @@
     "release:minor": "lerna publish minor",
     "release:major": "lerna publish major"
   },
+  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "xima exec lint-staged",
