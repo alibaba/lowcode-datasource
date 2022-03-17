@@ -1,6 +1,6 @@
 {
   "name": "@alilc/lowcode-datasource-mtop-handler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@ali/universal-mtop": "^5.1.9",
-    "@alilc/lowcode-datasource-types": "^1.0.0",
+    "@alilc/lowcode-datasource-types": "^1.0.1",
     "typescript": "^3.9.7"
   },
   "publishConfig": {

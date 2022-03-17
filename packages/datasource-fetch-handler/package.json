@@ -1,6 +1,6 @@
 {
   "name": "@alilc/lowcode-datasource-fetch-handler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
@@ -16,7 +16,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@alilc/lowcode-datasource-types": "^1.0.0",
+    "@alilc/lowcode-datasource-types": "^1.0.1",
     "typescript": "^3.9.7",
     "universal-request": "^2.2.0"
   },

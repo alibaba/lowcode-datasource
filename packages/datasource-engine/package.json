@@ -1,6 +1,6 @@
 {
   "name": "@alilc/lowcode-datasource-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DataSource Engine for lowcode",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,7 +17,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@alilc/lowcode-datasource-types": "^1.0.0",
+    "@alilc/lowcode-datasource-types": "^1.0.1",
     "@alilc/lowcode-types": "^1.0.0-beta.3",
     "lodash": "^4.17.21",
     "typescript": "^3.9.7"

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/alibaba/lowcode-datasource/compare/v1.0.0...v1.0.1) (2022-03-17)
+
+
+### Bug Fixes
+
+* 🐛 修复部分异常JSExpression返回值，减少Error ([3107aad](https://github.com/alibaba/lowcode-datasource/commit/3107aad3735379c28aef6d1d971c6ffb76ef9508))
+
+
+
+
+
 # 1.0.0 (2022-02-15)
 
 
