@@ -18,6 +18,13 @@ function isObject(obj: unknown) {
 }
 
 export const transformExpression = (code: string, context: IDataSourceRuntimeContext) => {
+  // 补充异常情况兼容性
+  if (code === undefined) {
+    return function () {};
+  }
+  if (code === '') {
+    return function () { return ''; };
+  }
   try {
     return new Function(`return (${code})`).call(context);
   } catch (error) {
@@ -26,6 +33,12 @@ export const transformExpression = (code: string, context: IDataSourceRuntimeCon
 };
 
 export const transformFunction = (code: string, context: IDataSourceRuntimeContext) => {
+  if (code === undefined) {
+    return function () {};
+  }
+  if (code === '') {
+    return function () { return ''; };
+  }
   try {
     return new Function(`return (${code})`).call(context).bind(context);
   } catch (error) {
