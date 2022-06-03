@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/*"
+    "packages/!(datasource-mopen-handler|datasource-mtop-handler|datasource-universal-mtop-handler)"
   ],
   "version": "1.0.1",
   "npmClient": "yarn",
