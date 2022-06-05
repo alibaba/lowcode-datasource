@@ -1,21 +1,33 @@
 import { RuntimeOptionsConfig } from '@alilc/lowcode-datasource-types';
 
-import request from 'universal-request';
-import { RequestOptions, AsObject } from 'universal-request/lib/types';
+import request from 'umi-request';
+import { RequestOptionsInit } from 'umi-request/types';
 
 // config 留着扩展
-export function createFetchHandler(config?: Record<string, unknown>) {
+export function createUmiRequestHandler(config?: Record<string, unknown>) {
   // eslint-disable-next-line space-before-function-paren
-  return async function(options: RuntimeOptionsConfig) {
-    const requestConfig: RequestOptions = {
+  return async function (options: RuntimeOptionsConfig) {
+    const requestConfig: RequestOptionsInit = {
       ...options,
-      url: options.uri,
-      method: options.method as RequestOptions['method'],
-      data: options.params as AsObject,
-      headers: options.headers as AsObject,
+      data: options.params,
+      // @ts-ignore
+      headers: options.headers,
+      parseResponse: false,
       ...config,
     };
-    const response = await request(requestConfig);
-    return response;
+    const response: Response = await request(options.uri, requestConfig);
+    const data = await response.clone().json();
+    const headers: any = {};
+    response.headers.forEach((value, key) => {
+      headers[key] = value;
+    });
+    const rebuildResponse = {
+      data,
+      headers,
+      config: requestConfig,
+      status: response.status,
+      statusText: response.statusText,
+    };
+    return rebuildResponse;
   };
 }

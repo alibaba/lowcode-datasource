@@ -1,6 +1,6 @@
 {
-  "name": "@alilc/lowcode-datasource-fetch-handler",
-  "version": "1.0.1",
+  "name": "@alilc/lowcode-datasource-umi-request-handler",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
@@ -18,7 +18,7 @@
   "dependencies": {
     "@alilc/lowcode-datasource-types": "^1.0.1",
     "typescript": "^3.9.7",
-    "universal-request": "^2.2.0"
+    "umi-request": "^1.4.0"
   },
   "publishConfig": {
     "access": "public",
