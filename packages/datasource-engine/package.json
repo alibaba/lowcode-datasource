@@ -6,13 +6,15 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
+    "es",
     "src",
     "interpret*",
     "runtime*"
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc ",
+    "build": "npm run clean && tsc && npm run build:es",
+    "build:es": "tsc --target es5 --module es6 --outDir es",
     "test": "ava",
     "prepublishOnly": "npm run build"
   },
