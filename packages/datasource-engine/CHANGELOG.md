@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/alibaba/lowcode-datasource/compare/v1.0.1...v1.1.0) (2022-06-20)
+
+
+### Features
+
+* 🎸 为数据源引擎增加 module 入口, 以便支持 vite 和 snowpack 等现代构建工具 ([9e37434](https://github.com/alibaba/lowcode-datasource/commit/9e3743423471e9e11e2181b401f6f54b4e3dc726))
+
+
+
+
+
 ## [1.0.1](https://github.com/alibaba/lowcode-datasource/compare/v1.0.0...v1.0.1) (2022-03-17)
 
 
