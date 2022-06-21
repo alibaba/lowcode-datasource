@@ -2,7 +2,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/!(datasource-mopen-handler|datasource-mtop-handler|datasource-universal-mtop-handler)"
     ],
     "nohoist": []
   },
