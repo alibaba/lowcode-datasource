@@ -11,7 +11,7 @@ import {
 } from '@alilc/lowcode-types';
 
 const adapt2Runtime = (dataSource: InterpretDataSource, context: IDataSourceRuntimeContext) => {
-  const { list: interpretConfigList, dataHandler: interpretDataHandler } = dataSource;
+  const { list: interpretConfigList, dataHandler: interpretDataHandler } = dataSource || {};
   const dataHandler: (dataMap?: DataSourceMap) => void = interpretDataHandler
     ? getRuntimeJsValue(interpretDataHandler, context)
     : undefined;
