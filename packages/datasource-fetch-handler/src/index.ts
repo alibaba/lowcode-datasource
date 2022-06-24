@@ -16,6 +16,6 @@ export function createFetchHandler(config?: Record<string, unknown>) {
       ...config,
     };
     const response = await request(requestConfig);
-    return response;
+    return response.data;
   };
 }
