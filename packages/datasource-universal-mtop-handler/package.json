@@ -1,6 +1,6 @@
 {
   "name": "@alilc/lowcode-datasource-universal-mtop-handler",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@ali/mirror-io-client-universal-mtop": "1.0.0-beta.16",
-    "@alilc/lowcode-datasource-types": "1.1.1",
+    "@alilc/lowcode-datasource-types": "1.1.2",
     "typescript": "^3.9.7"
   },
   "publishConfig": {
