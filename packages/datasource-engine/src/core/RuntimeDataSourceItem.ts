@@ -106,7 +106,8 @@ class RuntimeDataSourceItem<TParams extends Record<string, unknown> = Record<str
     if (!shouldFetch) {
       this._status = RuntimeDataSourceStatus.Error;
       this._error = new Error(`the ${this._dataSourceConfig.id} request should not fetch, please check the condition`);
-      throw this._error;
+      console.warn(this.error);
+      return;
     }
 
     // willFetch, 参数为当前options，如果load有参数，则会合并到options中的params中
