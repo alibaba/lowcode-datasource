@@ -88,10 +88,16 @@ class RuntimeDataSourceItem<TParams extends Record<string, unknown> = Record<str
 
     // 临时变量存，每次可能结果不一致，不做缓存
     let shouldFetch = true;
+    let fetchOptions = this._options;
+
+    // 如果load存在参数则采取合并的策略合并参数，合并后再一起参与shouldFetch，willFetch的计算
+    if (params) {
+      fetchOptions.params = merge(fetchOptions.params, params);
+    }
 
     if (this._dataSourceConfig.shouldFetch) {
       if (typeof this._dataSourceConfig.shouldFetch === 'function') {
-        shouldFetch = this._dataSourceConfig.shouldFetch(this._options);
+        shouldFetch = this._dataSourceConfig.shouldFetch(fetchOptions);
       } else if (typeof this._dataSourceConfig.shouldFetch === 'boolean') {
         shouldFetch = this._dataSourceConfig.shouldFetch;
       }
@@ -101,13 +107,6 @@ class RuntimeDataSourceItem<TParams extends Record<string, unknown> = Record<str
       this._status = RuntimeDataSourceStatus.Error;
       this._error = new Error(`the ${this._dataSourceConfig.id} request should not fetch, please check the condition`);
       throw this._error;
-    }
-
-    let fetchOptions = this._options;
-
-    // 如果load存在参数则采取合并的策略合并参数，合并后再一起参与willFetch的计算
-    if (params) {
-      fetchOptions.params = merge(fetchOptions.params, params);
     }
 
     // willFetch, 参数为当前options，如果load有参数，则会合并到options中的params中
