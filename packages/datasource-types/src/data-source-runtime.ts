@@ -15,7 +15,7 @@ export interface RuntimeDataSourceConfig {
   isSync?: boolean;
   type?: string;
   willFetch?: WillFetch;
-  shouldFetch?: () => boolean;
+  shouldFetch?: (options:RuntimeOptionsConfig) => boolean;
   requestHandler?: CustomRequestHandler;
   dataHandler?: DataHandler;
   errorHandler?: ErrorHandler;

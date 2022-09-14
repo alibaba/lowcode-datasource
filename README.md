@@ -74,7 +74,7 @@ export interface RuntimeOptionsConfig {
     isCors?: boolean;
     timeout?: number;
     headers?: Record<string, unknown>;
-    shouldFetch?: () => boolean;
+    shouldFetch?: (options: RuntimeDataSourceConfig) => boolean;
     [option: string]: unknown;
 }
 export declare type RuntimeOptions = () => RuntimeOptionsConfig; // 考虑需要动态获取值的情况，这里在运行时会真正的转为一个 function

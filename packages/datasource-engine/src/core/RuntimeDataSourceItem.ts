@@ -91,7 +91,7 @@ class RuntimeDataSourceItem<TParams extends Record<string, unknown> = Record<str
 
     if (this._dataSourceConfig.shouldFetch) {
       if (typeof this._dataSourceConfig.shouldFetch === 'function') {
-        shouldFetch = this._dataSourceConfig.shouldFetch();
+        shouldFetch = this._dataSourceConfig.shouldFetch(this._options);
       } else if (typeof this._dataSourceConfig.shouldFetch === 'boolean') {
         shouldFetch = this._dataSourceConfig.shouldFetch;
       }
