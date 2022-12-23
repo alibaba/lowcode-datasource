@@ -45,7 +45,7 @@
     "lerna": "^4.x",
     "ts-node": "^7.0.1",
     "tslib": "^1.9.3",
-    "typescript": "^3.2.2",
+    "typescript": "^4.6.2",
     "xima": "^0.2.15"
   },
   "engines": {
