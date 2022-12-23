@@ -19,5 +19,8 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "dependencies": {
+    "tslib": "^2.0.1"
+  },
   "gitHead": "714230d68a17fc010fbe80b511802bb410188fb5"
 }
