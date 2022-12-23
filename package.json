@@ -56,7 +56,5 @@
     "lockfile": "enable"
   },
   "name": "ali-lowcode-datasource",
-  "publishConfig": {
-    "registry": "https://registry.antfin-inc.com"
-  }
+  "repository": "git@github.com:alibaba/lowcode-datasource.git"
 }
