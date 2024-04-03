@@ -1,17 +1,16 @@
 /* eslint-disable no-new-func */
 
 import {
-  CompositeValue,
   IDataSourceRuntimeContext,
   InterpretDataSourceConfig,
   isJSExpression,
   isJSFunction,
-  JSExpression,
-  JSFunction,
-  JSONObject,
+  IPublicTypeJSExpression,
+  IPublicTypeJSFunction,
   RuntimeOptionsConfig,
 } from '@alilc/lowcode-types';
 
+import { CompositeValue, JSONObject } from '@alilc/lowcode-datasource-types';
 
 function isObject(obj: unknown) {
   return Object.prototype.toString.call(obj).indexOf('Object') !== -1;
@@ -50,7 +49,7 @@ export const transformBoolStr = (str: string) => {
   return str !== 'false';
 };
 
-export const getRuntimeJsValue = (value: JSExpression | JSFunction, context: IDataSourceRuntimeContext) => {
+export const getRuntimeJsValue = (value: IPublicTypeJSExpression | IPublicTypeJSFunction, context: IDataSourceRuntimeContext) => {
   if (!['JSExpression', 'JSFunction'].includes(value.type)) {
     console.error(`translate error, value is ${JSON.stringify(value)}`);
     return '';
@@ -85,7 +84,7 @@ export const getRuntimeValueFromConfig = (type: string, value: CompositeValue, c
   return value;
 };
 
-export const buildJsonObj = (params: JSONObject | JSExpression, context: IDataSourceRuntimeContext) => {
+export const buildJsonObj = (params: JSONObject | IPublicTypeJSExpression, context: IDataSourceRuntimeContext) => {
   if (isJSExpression(params)) {
     return transformExpression(params.value, context);
   } else if (isObject(params)) { // 处理params内部为JSExpression的问题
