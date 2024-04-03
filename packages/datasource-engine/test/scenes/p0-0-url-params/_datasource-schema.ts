@@ -1,4 +1,4 @@
-import { InterpretDataSource } from '@ali/lowcode-types';
+import { InterpretDataSource } from '@alilc/lowcode-types';
 
 // 这里仅仅是数据源部分的 schema:
 // @see: https://yuque.antfin-inc.com/mo/spec/spec-low-code-building-schema#XMeF5
