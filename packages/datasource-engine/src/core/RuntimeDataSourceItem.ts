@@ -92,7 +92,7 @@ class RuntimeDataSourceItem<TParams extends Record<string, unknown> = Record<str
 
     // 如果load存在参数则采取合并的策略合并参数，合并后再一起参与shouldFetch，willFetch的计算
     if (params) {
-      fetchOptions.params = merge(fetchOptions.params, params);
+      fetchOptions.params = merge(params, fetchOptions.params);
     }
 
     if (this._dataSourceConfig.shouldFetch) {
