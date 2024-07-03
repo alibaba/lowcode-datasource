@@ -1,6 +1,6 @@
 {
   "name": "@alilc/lowcode-datasource-jsonp-handler",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
@@ -16,7 +16,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@alilc/lowcode-datasource-types": "1.1.4",
+    "@alilc/lowcode-datasource-types": "^1.2.0",
     "jsonp": "^0.2.1",
     "typescript": "^4.6.2"
   },

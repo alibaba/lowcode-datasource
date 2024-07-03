@@ -1,6 +1,6 @@
 {
   "name": "@alilc/lowcode-datasource-types",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
