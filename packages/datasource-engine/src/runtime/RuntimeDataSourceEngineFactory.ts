@@ -5,6 +5,7 @@ import {
   RequestHandlersMap,
   RuntimeDataSourceConfig,
   RuntimeDataSource,
+  DataHandler,
 } from '@alilc/lowcode-types';
 
 import { RuntimeDataSourceItem } from '../core';
@@ -22,6 +23,7 @@ export default (
   context: IDataSourceRuntimeContext,
   extraConfig: {
     requestHandlersMap: RequestHandlersMap<{ data: unknown }>;
+    defaultDataHandler?: DataHandler;
   } = { requestHandlersMap: {} },
 ) => {
   const { requestHandlersMap } = extraConfig;
@@ -41,7 +43,8 @@ export default (
       ? ds.shouldFetch.bind(context)
       : ds.shouldFetch;
     ds.willFetch = ds.willFetch ? ds.willFetch.bind(context) : defaultWillFetch;
-    ds.dataHandler = ds.dataHandler ? ds.dataHandler.bind(context) : defaultDataHandler;
+    const finalDataHandler = extraConfig.defaultDataHandler || defaultDataHandler;
+    ds.dataHandler = ds.dataHandler ? ds.dataHandler.bind(context) : finalDataHandler;
   });
 
   const dataSourceMap = dataSource.list.reduce(
