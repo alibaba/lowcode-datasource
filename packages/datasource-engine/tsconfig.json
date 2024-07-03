@@ -64,5 +64,5 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "skipLibCheck": true
   },
-  "include": ["src", "../datasource-types/src/ExtraConfig.ts"]
+  "include": ["src"]
 }
