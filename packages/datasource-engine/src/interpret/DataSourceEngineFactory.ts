@@ -2,6 +2,7 @@ import { adapt2Runtime } from '../core/adapter';
 import { RuntimeDataSourceItem } from '../core/RuntimeDataSourceItem';
 import { reloadDataSourceFactory } from '../core/reloadDataSourceFactory';
 import {
+  DataHandler,
   IDataSourceRuntimeContext,
   InterpretDataSource,
   IRuntimeDataSource,
@@ -22,11 +23,14 @@ export default (
   context: IDataSourceRuntimeContext,
   extraConfig: {
     requestHandlersMap: RequestHandlersMap<{ data: unknown }>;
+    defaultDataHandler?: DataHandler;
   } = { requestHandlersMap: {} },
 ) => {
   const { requestHandlersMap } = extraConfig;
 
-  const runtimeDataSource: RuntimeDataSource = adapt2Runtime(dataSource, context);
+  const runtimeDataSource: RuntimeDataSource = adapt2Runtime(dataSource, context, {
+    defaultDataHandler: extraConfig.defaultDataHandler,
+  });
 
   const dataSourceMap = runtimeDataSource.list.reduce(
     (prev: Record<string, IRuntimeDataSource>, current: RuntimeDataSourceConfig) => {
