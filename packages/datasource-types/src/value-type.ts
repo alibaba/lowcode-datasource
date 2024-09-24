@@ -81,11 +81,3 @@ export type CompositeArray = CompositeValue[];
 export interface CompositeObject {
   [key: string]: CompositeValue;
 }
-
-export function isJSExpression(data: any): data is JSExpression {
-  return data && data.type === 'JSExpression';
-}
-
-export function isJSFunction(x: any): x is JSFunction {
-  return typeof x === 'object' && x && x.type === 'JSFunction';
-}
