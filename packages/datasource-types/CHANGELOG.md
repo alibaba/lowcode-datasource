@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/alibaba/lowcode-datasource/compare/v1.2.0...v1.2.1) (2024-09-24)
+
+
+### Bug Fixes
+
+* 🐛 Remove unused JSExpression and JSFunction functions ([a3e31c6](https://github.com/alibaba/lowcode-datasource/commit/a3e31c6bc67593b01f0533174458fd61e5ae0f82))
+
+
+
+
+
 # [1.2.0](https://github.com/alibaba/lowcode-datasource/compare/v1.1.4...v1.2.0) (2024-07-03)
 
 
